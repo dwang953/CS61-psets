@@ -15,7 +15,7 @@ all:
 	@:
 
 $(PROGRAMS): %: %.o
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^ -lpthread
 
 clean: clean-main clean-hook
 clean-main:
