@@ -2,8 +2,8 @@ README for CS 61 Problem Set 1
 ------------------------------
 YOU MUST FILL OUT THIS FILE BEFORE SUBMITTING!
 
-YOUR NAME:
-YOUR HUID:
+YOUR NAME: Arian Allenson M. Valdez
+YOUR HUID: :)
 
 (Optional, for partner)
 YOUR NAME:

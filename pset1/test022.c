@@ -36,4 +36,4 @@ int main() {
 }
 
 //! EXPECTED LEAK: ??{0x\w*}=pointer?? with size ??{\d+}=size??
-//! LEAK CHECK: test022.c:18: allocated object ??pointer?? with size ??size??
+//! LEAK CHECK: test022.c:18: allocated object ??{\w+}?? with size ???

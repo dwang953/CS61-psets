@@ -14,7 +14,7 @@ int main() {
     node *n;
 
     // create a list
-    for (int i = 0; i < 400; ++i) {
+    for (int i = 0; i < 2; ++i) {
 	n = (node *) malloc(sizeof(node));
 	n->next = list;
 	list = n;
