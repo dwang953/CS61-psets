@@ -98,8 +98,8 @@ void start(const char *command) {
     else if (command && strcmp(command, "forkexit") == 0)
 	process_setup(1, 5);
     else
-	for (pid_t i = 1; i <= 4; ++i)
-	    process_setup(i, i - 1);
+      for (pid_t i = 1; i <= 4; ++i)
+	  process_setup(i, i - 1);
 
     // Switch to the first process using run()
     run(&processes[1]);
@@ -118,6 +118,12 @@ void process_setup(pid_t pid, int program_number) {
     int r = program_load(&processes[pid], program_number);
     assert(r >= 0);
     processes[pid].p_registers.reg_esp = PROC_START_ADDR + PROC_SIZE * pid;
+    //My Edit
+    virtual_memory_map(processes[pid].p_pagedir, 0x0, 0x0, 4096 * 256,
+		   PTE_P | PTE_W );
+    virtual_memory_map(processes[pid].p_pagedir, 0xB8000, 0xB8000, 4096,
+		   PTE_P | PTE_W | PTE_U );
+    //
     page_alloc(processes[pid].p_pagedir,
 	       processes[pid].p_registers.reg_esp - PAGESIZE, pid);
     processes[pid].p_state = P_RUNNABLE;
