@@ -19,7 +19,7 @@ void process_main(void) {
 
     // The bottom of the stack is the first address on the current
     // stack page (this process never needs more than one stack page).
-    stack_bottom = ROUNDDOWN((uint8_t *) read_esp() - 1, PAGESIZE);
+    stack_bottom =ROUNDDOWN((uint8_t *) read_esp() - 1, PAGESIZE);
 
     // Allocate heap pages until (1) hit the stack (out of address space)
     // or (2) allocation fails (out of physical memory).
